@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Carrom</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="ui-panel left-panel">
+            <h1>Carrom</h1>
+            <div id="connection-status" class="status connected">Connecting...</div>
+            <div id="role-display" class="role">Role: Waiting...</div>
+            
+            <div class="scoreboard">
+                <div class="score-card p1">
+                    <h3>Player 1 (White)</h3>
+                    <p id="score-p1">0</p>
+                </div>
+                <div class="score-card p2">
+                    <h3>Player 2 (Black)</h3>
+                    <p id="score-p2">0</p>
+                </div>
+            </div>
+            
+            <div id="turn-indicator" class="turn-indicator">
+                Waiting for game to start...
+            </div>
+        </div>
+
+        <div class="game-container">
+            <canvas id="gameCanvas" width="800" height="800"></canvas>
+            <div id="aim-line-container"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
